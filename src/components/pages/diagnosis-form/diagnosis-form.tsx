@@ -6,11 +6,10 @@ import './diagnosis-form.style.scss';
 
 const DiagnosisForm = () => {
 	const diagnosisService = new DiagnosisService();
-	const [result, setResult] = useState();
+	const [result, setResult] = useState<Number>();
 
 	const onSubmit = async (event: any) => {
 		const response = await diagnosisService.computeDiagnosis(event);
-		console.log('Response: ', JSON.stringify(response));
 		// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 		response.status === 200 ? setResult(response.data.target) : '';
 	};

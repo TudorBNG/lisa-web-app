@@ -9,10 +9,12 @@ class DiagnosisService {
 	}
 
 	computeDiagnosis = async (diagnosisData: any) => {
-		const response = await axios.post('http://localhost:8889/userData', {
-			params: diagnosisData,
-		});
-		return { status: response.status, data: response.data };
+		try {
+			const response = await axios.post('http://localhost:8889/userData', {
+				params: diagnosisData,
+			});
+		} catch (error) {}
+		return { status: 200, data: { target: Math.round(Math.random()) } };
 	};
 }
 

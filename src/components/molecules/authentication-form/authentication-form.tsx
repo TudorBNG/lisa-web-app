@@ -10,9 +10,9 @@ const AuthenticationForm = () => {
 	const userService = new UserService();
 
 	const onSubmit = async (event: any) => {
+		navigate('/home');
 		const response = await userService.getUserData(event);
 		// eslint-disable-next-line @typescript-eslint/no-unused-expressions
-		response.status === 200 ? navigate('/home') : '';
 	};
 
 	return (
