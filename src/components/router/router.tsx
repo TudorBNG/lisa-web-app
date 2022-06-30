@@ -2,6 +2,7 @@ import { Routes } from 'react-router-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavigationBar from '../molecules/navigation-bar/navigation-bar';
 import DiagnosisForm from '../pages/diagnosis-form/diagnosis-form';
+import HomePage from '../pages/home-page/home-page';
 import Home from '../pages/home/home';
 import RegistrationPage from '../pages/registration/registration';
 
@@ -10,7 +11,15 @@ function AppRouter() {
 		<Router>
 			<Routes>
 				<Route path='/' element={<Home />} />
-				<Route path='/home' element={<NavigationBar />} />
+				<Route
+					path='/home'
+					element={
+						<>
+							<NavigationBar />
+							<HomePage />
+						</>
+					}
+				/>
 				<Route path='/profile' element={<NavigationBar />} />
 				<Route
 					path='/register'

@@ -6,13 +6,13 @@ import './diagnosis-form.style.scss';
 
 const DiagnosisForm = () => {
 	const diagnosisService = new DiagnosisService();
-	const [result, setResult] = useState('');
+	const [result, setResult] = useState(1);
 
 	const onSubmit = async (event: any) => {
-		console.log('event ', event);
 		const response = await diagnosisService.computeDiagnosis(event);
+		console.log('Response: ', JSON.stringify(response));
 		// eslint-disable-next-line @typescript-eslint/no-unused-expressions
-		response.status === 200 ? setResult(response.data.result) : '';
+		response.status === 200 ? setResult(response.data.target) : '';
 	};
 	const formFields = [
 		'age',
@@ -57,9 +57,14 @@ const DiagnosisForm = () => {
 						>
 							Check diagnosis
 						</button>
-						{result && (
+						{result !== undefined && (
 							<div className='display-result'>
-								<p>Your result is: {result}</p>
+								<p>
+									Test Result:{' '}
+									{result === 0
+										? 'You are healthy'
+										: 'You might need to see a doctor!'}
+								</p>
 							</div>
 						)}
 					</form>

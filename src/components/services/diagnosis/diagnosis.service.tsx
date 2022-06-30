@@ -9,7 +9,7 @@ class DiagnosisService {
 	}
 
 	computeDiagnosis = async (diagnosisData: any) => {
-		const response = await axios.post('http://localhost:9090/userData', {
+		const response = await axios.post('http://localhost:8889/userData', {
 			params: diagnosisData,
 		});
 		return { status: response.status, data: response.data };
