@@ -6,7 +6,7 @@ import './diagnosis-form.style.scss';
 
 const DiagnosisForm = () => {
 	const diagnosisService = new DiagnosisService();
-	const [result, setResult] = useState(1);
+	const [result, setResult] = useState();
 
 	const onSubmit = async (event: any) => {
 		const response = await diagnosisService.computeDiagnosis(event);
