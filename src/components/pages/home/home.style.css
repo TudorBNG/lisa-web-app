@@ -1,0 +1,32 @@
+@keyframes pulse {
+	0% {
+		transform: scale(0.7);
+	}
+
+	100% {
+		transform: scale(0.9);
+	}
+}
+
+.heart-logo {
+	height: 100%;
+	width: 45%;
+	animation: pulse 1s infinite;
+	display: block;
+	animation-timing-function: ease-out;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+}
+
+.home-page-container {
+	height: 100%;
+}
+
+.top-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	margin: 15% 0;
+}

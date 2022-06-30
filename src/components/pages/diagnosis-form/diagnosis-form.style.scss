@@ -1,0 +1,27 @@
+.submit-diagnosis-button {
+	margin-top: 20%;
+	border: 0px;
+	width: 96%;
+	height: 40px;
+	border-radius: 20px;
+	background-color: #161616;
+	color: #a0a0a0;
+	font-size: 22px;
+	font-weight: bold;
+	&:hover {
+		cursor: pointer;
+		background-color: #1f1f1f;
+	}
+	&:active {
+		cursor: pointer;
+		background-color: #202020;
+	}
+}
+.diagnosis-form {
+	padding: 8%;
+	width: 50%;
+	margin-bottom: 30px;
+	background-color: #7c7c7c;
+	border-radius: 20px;
+	border: 3px solid black;
+}
